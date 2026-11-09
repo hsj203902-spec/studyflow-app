@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08090c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="StudyFlow">
+  <meta name="description" content="과목별 학습량과 마감일을 관리하는 앱">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>StudyFlow · 학습 목표</title>
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="brand-mark" aria-hidden="true"><span class="brand-line"></span><span class="brand-dot"></span><span class="brand-line short"></span></div>
+      <div class="brand-info"><span class="brand-name">StudyFlow</span><span class="brand-sub">학습을 끝까지, 차근차근</span></div>
+      <button class="icon-button" id="quick-add" type="button" aria-label="새 학습 항목 추가" title="항목 추가">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </header>
+
+    <main class="main-content" id="view" tabindex="-1"></main>
+
+    <nav class="tabbar" aria-label="메인 메뉴">
+      <button type="button" class="tab selected" data-tab="goals" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h6M8 17h4"/></svg><span>학습 목표</span></button>
+      <button type="button" class="tab" data-tab="today"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15l2 2 5-5"/></svg><span>오늘 할 일</span></button>
+      <button type="button" class="tab" data-tab="history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg><span>학습 기록</span></button>
+      <button type="button" class="tab" data-tab="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 1 3 3l1.3 1 1.6-.1 1.7 3-1 1.3v1.8l1 1.3-1.7 3-1.6-.1L15 18a3 3 0 0 1-6 0l-1.3-1-1.6.1-1.7-3 1-1.3v-1.8l-1-1.3 1.7-3 1.6.1L9 6a3 3 0 0 1 3-3Z"/><circle cx="12" cy="12" r="3"/></svg><span>설정</span></button>
+    </nav>
+  </div>
+  <div id="sheet-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <script src="./app.js" defer></script>
+</body>
+</html>
